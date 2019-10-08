@@ -1,6 +1,7 @@
 ﻿using Grpc.Net.Client;
 using GrpcEmployee;
 using GrpcGreeter;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 
 namespace GrpcGreeterClient
@@ -13,18 +14,15 @@ namespace GrpcGreeterClient
             var client = new Greeter.GreeterClient(channel);
             var reply = client.SayHello(new HelloRequest { Name = "GreeterClient" });
             Console.WriteLine("Greeting:" + reply.Message);
-            string id = "0";
-            while (id != "3")
+            string id ;
+            while ((id = Console.ReadLine()) != "3")
             {
-
-                id = Console.ReadLine();
                 var empClient = new Employee.EmployeeClient(channel);
-                var emp = empClient.getInfo(new EmpRequest { Id = id });
+                var emp = empClient.GetEmpInfo(new EmpRequest { Id =Convert.ToInt32(id) });
 
                 Console.WriteLine(emp);
             }
-
-
+         
             Console.ReadKey();
         }
     }

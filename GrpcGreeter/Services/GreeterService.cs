@@ -17,6 +17,7 @@ namespace GrpcGreeter
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
+            //context.GetHttpContext().Connection.ClientCertificate.Issuer;
             return Task.FromResult(new HelloReply
             {
                 Message = "Hello " + request.Name

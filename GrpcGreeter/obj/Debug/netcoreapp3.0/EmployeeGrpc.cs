@@ -14,12 +14,20 @@ namespace GrpcEmployee {
 
     static readonly grpc::Marshaller<global::GrpcEmployee.EmpRequest> __Marshaller_EmpRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcEmployee.EmpRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcEmployee.EmpModel> __Marshaller_EmpModel = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcEmployee.EmpModel.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GrpcEmployee.SearchRequest> __Marshaller_SearchRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcEmployee.SearchRequest.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::GrpcEmployee.EmpRequest, global::GrpcEmployee.EmpModel> __Method_getInfo = new grpc::Method<global::GrpcEmployee.EmpRequest, global::GrpcEmployee.EmpModel>(
+    static readonly grpc::Method<global::GrpcEmployee.EmpRequest, global::GrpcEmployee.EmpModel> __Method_GetEmpInfo = new grpc::Method<global::GrpcEmployee.EmpRequest, global::GrpcEmployee.EmpModel>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "getInfo",
+        "GetEmpInfo",
         __Marshaller_EmpRequest,
+        __Marshaller_EmpModel);
+
+    static readonly grpc::Method<global::GrpcEmployee.SearchRequest, global::GrpcEmployee.EmpModel> __Method_QueryEmployees = new grpc::Method<global::GrpcEmployee.SearchRequest, global::GrpcEmployee.EmpModel>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "QueryEmployees",
+        __Marshaller_SearchRequest,
         __Marshaller_EmpModel);
 
     /// <summary>Service descriptor</summary>
@@ -32,7 +40,12 @@ namespace GrpcEmployee {
     [grpc::BindServiceMethod(typeof(Employee), "BindService")]
     public abstract partial class EmployeeBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::GrpcEmployee.EmpModel> getInfo(global::GrpcEmployee.EmpRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GrpcEmployee.EmpModel> GetEmpInfo(global::GrpcEmployee.EmpRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::GrpcEmployee.EmpModel> QueryEmployees(global::GrpcEmployee.SearchRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -44,7 +57,8 @@ namespace GrpcEmployee {
     public static grpc::ServerServiceDefinition BindService(EmployeeBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_getInfo, serviceImpl.getInfo).Build();
+          .AddMethod(__Method_GetEmpInfo, serviceImpl.GetEmpInfo)
+          .AddMethod(__Method_QueryEmployees, serviceImpl.QueryEmployees).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -53,7 +67,8 @@ namespace GrpcEmployee {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, EmployeeBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_getInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcEmployee.EmpRequest, global::GrpcEmployee.EmpModel>(serviceImpl.getInfo));
+      serviceBinder.AddMethod(__Method_GetEmpInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcEmployee.EmpRequest, global::GrpcEmployee.EmpModel>(serviceImpl.GetEmpInfo));
+      serviceBinder.AddMethod(__Method_QueryEmployees, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcEmployee.SearchRequest, global::GrpcEmployee.EmpModel>(serviceImpl.QueryEmployees));
     }
 
   }

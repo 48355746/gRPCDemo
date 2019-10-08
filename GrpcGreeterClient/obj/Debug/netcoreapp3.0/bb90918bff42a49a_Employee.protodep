@@ -1,2 +1,3 @@
 obj\Debug\netcoreapp3.0/Employee.cs \
-obj\Debug\netcoreapp3.0/EmployeeGrpc.cs: ../GrpcGreeter/Protos/Employee.proto
+obj\Debug\netcoreapp3.0/EmployeeGrpc.cs: C:/Users/Administrator/.nuget/packages/grpc.tools/2.24.0/build/native/include/google/protobuf/any.proto\
+ ../GrpcGreeter/Protos/Employee.proto
