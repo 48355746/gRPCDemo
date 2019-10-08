@@ -1,0 +1,12 @@
+﻿syntax = "proto3";
+option csharp_namespace = "GrpcEmployee";
+service Employee{
+	rpc getInfo(EmpRequest) returns(EmpModel);
+}
+message EmpRequest{
+	string id = 1;
+}
+message EmpModel{
+	string fid = 1;
+	string name = 2;
+}

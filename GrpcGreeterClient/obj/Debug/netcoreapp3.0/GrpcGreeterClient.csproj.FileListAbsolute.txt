@@ -14,3 +14,4 @@ C:\Users\Administrator\source\repos\GrpcGreeter\GrpcGreeterClient\bin\Debug\netc
 C:\Users\Administrator\source\repos\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.0\GrpcGreeterClient.pdb
 C:\Users\Administrator\source\repos\GrpcGreeter\GrpcGreeterClient\obj\Debug\netcoreapp3.0\GrpcGreeterClient.dll
 C:\Users\Administrator\source\repos\GrpcGreeter\GrpcGreeterClient\obj\Debug\netcoreapp3.0\GrpcGreeterClient.pdb
+C:\Users\Administrator\source\repos\GrpcGreeter\GrpcGreeterClient\obj\Debug\netcoreapp3.0\GrpcGreeterClient.csprojAssemblyReference.cache

@@ -1,0 +1,2 @@
+obj\Debug\netcoreapp3.0/Employee.cs \
+obj\Debug\netcoreapp3.0/EmployeeGrpc.cs: ../GrpcGreeter/Protos/Employee.proto
