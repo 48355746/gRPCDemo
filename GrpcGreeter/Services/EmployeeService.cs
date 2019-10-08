@@ -17,7 +17,7 @@ namespace GrpcGreeter.Services
             }
             else
             {
-                return Task.FromResult(new EmpModel { Fid = "33333", Name = "XXX"});
+                return Task.FromResult(new EmpModel { Fid = "33333", Name = "XXXX"});
             }
         }
         public override Task<EmpModel> QueryEmployees(SearchRequest request, ServerCallContext context)
